@@ -1,0 +1,28 @@
+
+  <link rel="import" href="../polymer.html">
+
+<dom-module id="x-test">
+  <style>
+  </style>
+  <template>
+    <input type="text" value="{{counter::input}}"></input>
+    <button on-click="increment">Increment</button>
+    <div>This is the counter value: <span>[[counter]]</span></div>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+      is: 'x-test',
+      properties: {
+        counter: {
+          value: 42,
+          type: Number,
+          notify: true
+        }
+      },
+      increment: function() {
+        this.counter += 1;
+      }
+  });
+</script>
+
